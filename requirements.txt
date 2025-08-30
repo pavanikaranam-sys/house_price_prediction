@@ -1,7 +1,9 @@
 streamlit
 pandas
 numpy
-matplotlib
 scikit-learn
+pyyaml
+fpdf
+streamlit-authenticator
 seaborn
-joblib
+matplotlib
