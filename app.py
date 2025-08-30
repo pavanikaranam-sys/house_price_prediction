@@ -9,63 +9,52 @@ import base64
 import os
 import json, re
 
-st.title("🏡️ House Price Prediction")
-st.markdown("Kindly provide the required details in the form below.")
+st.set_page_config(
+    page_title="House price Prediction",
+    page_icon="🏡️",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
 
-df = pd.read_csv("/home/user/Desktop/bhk/model/home_prices.csv")
+st.title("🏡️ House Price Prediction")
+st.write("Welcome to house price prediction app")
+
+# Use relative paths for deployment
+df = pd.read_csv("home_prices.csv")
 
 # Load model
-with open("/home/user/Desktop/bhk/server/house_price.pkl", "rb") as f:
+with open("house_price.pkl", "rb") as f:
     model = pickle.load(f)
 
 # Load feature columns
-with open("/home/user/Desktop/bhk/server/columns.json", "r") as f:
+with open("columns.json", "r") as f:
     data_columns = json.load(f)['data_columns']
 
-
-
-# Extract locations (all cols from index 3 onwards are one-hot encoded locations)
-locations = data_columns[3:]
-location_map = {loc.replace("location_", "").lower(): loc for loc in locations}
+# Extract location columns (all cols from index 3 onwards are one-hot encoded locations)
+location_cols = data_columns[3:]
+# Map clean names to actual one-hot columns
+location_map = {loc.replace("location_", ""): loc for loc in location_cols}
 
 with st.sidebar:
     st.subheader("Please fill below house details:")
-    with st.form("house_form"):
-        location = st.selectbox("Location", list(location_map.keys()))
-        total_sqft = st.slider("Total sqft", 300, 30000)
-        bhk = st.slider("No. of Bedrooms", 1, 20, 2)
-        bath = st.slider("No. of Bathrooms", 1, 20, 2)
-        submitted = st.form_submit_button("Submit")
-        if submitted:
-            st.balloons()
-            st.write("✅ Location:", location)
-            st.write("✅ Total sqft:", total_sqft)
-            st.write("✅ Bedrooms:", bhk)
-            st.write("✅ Bathrooms:", bath)
+    location_selected = st.selectbox("Location", list(location_map.keys()))
+    total_sqft = st.slider("Total sqft", 300, 5000)
+    bhk = st.slider("No. of Bedrooms", 1,16,1)
+    bath = st.slider("No. of Bathrooms", 1,16,1)
 
-st.write("Available features:", data_columns)
+if total_sqft/bhk<300:
+    st.warning("these type of houses does not exist")
 
-def normalize(text):
-    text = text.lower()                     # lowercase
-    text = text.strip()                     # remove extra spaces
-    text = re.sub(r'[^a-z0-9 ]', ' ', text) # replace punctuation with space
-    text = re.sub(r'\s+', ' ', text)        # collapse multiple spaces
-    return text
 
-df.columns=[normalize(c) for c in df.columns]
-data_columns_lower=[normalize(col) for col in data_columns]
-locations=[normalize(c) for c in locations]
+with st.expander("📘 How to Use This App"):
+    st.markdown("""
+    1. Enter information of house you are searching for.  
+    2. Click **Predict** to check related house details.
+    """)
 
-data_columns=[c.strip().lower() for c in data_columns]
-locations=[c.replace("location_", "").strip().lower() for c in locations]
-
-st.write("Sample from data_columns:", data_columns[:20])
-st.write("Sample from locations:", locations[:20])
-
-    
 # Prediction button
 if st.button("Predict"):
-    
+
     try:
         # Prepare feature vector
         x = np.zeros(len(data_columns))
@@ -73,13 +62,11 @@ if st.button("Predict"):
         x[1] = bath
         x[2] = bhk
 
-        # Directly match location (since your JSON already has raw names like 'Bellandur')
-        if locations in data_columns:
-            loc_index = data_columns.index(location)
+        loc_clean = location_selected  # selected from dropdown
+        if loc_clean in location_map:
+            loc_column = location_map[loc_clean]          # exact column name
+            loc_index = data_columns.index(loc_column)
             x[loc_index] = 1
-        else:
-            st.error(f"Location '{location}' not found in features")
-            st.stop()
 
         # Convert numpy array into dataframe with column names
         x_df = pd.DataFrame([x], columns=data_columns)
@@ -90,4 +77,3 @@ if st.button("Predict"):
 
     except Exception as e:
         st.error(f"Error: {e}")
-
