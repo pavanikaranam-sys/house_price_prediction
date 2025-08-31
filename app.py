@@ -22,7 +22,7 @@ st.write("Welcome to house price prediction app")
 # Use relative paths for deployment
 df = pd.read_csv("home_prices.csv")
 
-model = joblib.load("/home/user/Desktop/bhk/model/house_price.pkl")
+model = joblib.load("house_price.pkl")
 
 # Load feature columns
 with open("columns.json", "r") as f:
