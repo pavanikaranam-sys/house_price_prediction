@@ -3,6 +3,7 @@ import seaborn as sns
 import pandas as pd
 import streamlit as st
 import pickle
+import joblib
 import numpy as np
 from fpdf import FPDF
 import base64
