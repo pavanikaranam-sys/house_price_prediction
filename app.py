@@ -44,6 +44,8 @@ with st.sidebar:
 
 if total_sqft/bhk<300:
     st.warning("these type of houses does not exist")
+if bath>bhk:
+    st.warning("these type of houses does not exist")
 
 
 with st.expander("📘 How to Use This App"):
