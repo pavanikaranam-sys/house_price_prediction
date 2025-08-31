@@ -7,5 +7,4 @@ fpdf
 streamlit-authenticator
 seaborn
 matplotlib
-pickle
 joblib
