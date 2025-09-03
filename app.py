@@ -26,7 +26,6 @@ st.write("Welcome to house price prediction app")
 
 model = joblib.load("house_price.pkl")
 
-# Load feature columns
 with open("columns.json", "r") as f:
     data_columns = json.load(f)['data_columns']
 
