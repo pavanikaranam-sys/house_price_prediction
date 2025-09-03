@@ -26,6 +26,7 @@ st.write("Welcome to house price prediction app")
 
 model = joblib.load("house_price.pkl")
 
+# Load feature columns
 with open("columns.json", "r") as f:
     data_columns = json.load(f)['data_columns']
 
@@ -74,8 +75,7 @@ if st.button("Predict"):
 
         # Make prediction
         prediction = model.predict(x_df)[0]
-        new_prediction=round(prediction,2)
-        st.success(f"💰 Predicted Price: {new_prediction} Lakhs")
+        st.success(f"💰 Predicted Price: {round(prediction,2)} Lakhs")
 
     except Exception as e:
         st.error(f"Error: {e}")
