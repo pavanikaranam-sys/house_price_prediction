@@ -21,7 +21,7 @@ st.title("🏡️ House Price Prediction")
 st.write("Welcome to house price prediction app")
 
 # Use relative paths for deployment
-df = pd.read_csv("/home/user/Desktop/bhk/model/home_prices.csv")
+#df = pd.read_csv("/home/user/Desktop/bhk/model/home_prices.csv")
 
 model = joblib.load("/home/user/Desktop/bhk/model/house_price.pkl")
 
@@ -74,7 +74,8 @@ if st.button("Predict"):
 
         # Make prediction
         prediction = model.predict(x_df)[0]
-        st.success(f"💰 Predicted Price: {round(prediction, 2)} Lakhs")
+        new_prediction=round(prediction,2)
+        st.success(f"💰 Predicted Price: {new_prediction} Lakhs")
 
     except Exception as e:
         st.error(f"Error: {e}")
