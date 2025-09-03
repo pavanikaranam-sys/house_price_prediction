@@ -26,7 +26,7 @@ st.write("Welcome to house price prediction app")
 model = joblib.load("/home/user/Desktop/bhk/model/house_price.pkl")
 
 # Load feature columns
-with open("columns.json", "r") as f:
+with open("/home/user/Desktop/bhk/model/columns.json", "r") as f:
     data_columns = json.load(f)['data_columns']
 
 # Extract location columns (all cols from index 3 onwards are one-hot encoded locations)
