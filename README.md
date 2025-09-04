@@ -10,7 +10,7 @@ This project predicts the price of a house in Bangalore based on location, squar
 
 ---
 
-## Dataset
+## 📑️ Dataset
 This dataset contains several features like :
 
 area_type: Type of area (e.g., Super built-up Area, Built-up Area, Plot Area, Carpet Area).
@@ -25,7 +25,7 @@ price: Price of the house in lakhs (target variable).
 
 ---
 
-## Requirements
+## 📦 Requirements
 - streamlit
 - pandas
 - numpy
@@ -58,6 +58,7 @@ price: Price of the house in lakhs (target variable).
 ## 📝 License
 This project is open-source and free to use.
  
+
 
 
 
