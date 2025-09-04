@@ -13,15 +13,15 @@ This project predicts the price of a house in Bangalore based on location, squar
 ## 📑️ Dataset
 This dataset contains several features like :
 
-area_type: Type of area (e.g., Super built-up Area, Built-up Area, Plot Area, Carpet Area).
-availability: Availability status of the property (e.g., Ready to Move, Under Construction, Immediate Possession).
-location: Locality or neighborhood in Bangalore where the house is located.
-size: Number of bedrooms in the house, usually in the format “2 BHK”, “3 Bedroom”, etc.
-society: Name of the housing society or apartment complex (if available).
-total_sqft: Total area of the house in square feet (can be a single number or range).
-bath: Number of bathrooms in the house.
-balcony: Number of balconies in the house.
-price: Price of the house in lakhs (target variable).
+- area_type: Type of area (e.g., Super built-up Area, Built-up Area, Plot Area, Carpet Area).
+- availability: Availability status of the property (e.g., Ready to Move, Under Construction, Immediate Possession).
+- Location: Locality or neighborhood in Bangalore where the house is located.
+- size: Number of bedrooms in the house, usually in the format “2 BHK”, “3 Bedroom”, etc.
+- society: Name of the housing society or apartment complex (if available).
+- total_sqft: Total area of the house in square feet (can be a single number or range).
+- bath: Number of bathrooms in the house.
+- balcony: Number of balconies in the house.
+- price: Price of the house in lakhs (target variable).
 
 ---
 
@@ -57,6 +57,7 @@ price: Price of the house in lakhs (target variable).
 ## 📝 License
 This project is open-source and free to use.
  
+
 
 
 
