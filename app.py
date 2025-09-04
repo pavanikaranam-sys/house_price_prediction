@@ -46,9 +46,9 @@ if bath>bhk+1:
 st.markdown("⚠️ **Disclaimer**")
 
 st.markdown("""
-	🔹️ Data in this app is limited to houses in Bangalore.  
-	🔹️ This app is for educational use only.  
-	🔹️ Do not rely on these predictions for financial or legal decisions.
+🔹️ Data in this app is limited to houses in Bangalore.  
+🔹️ This app is for educational use only.  
+🔹️ Do not rely on these predictions for financial or legal decisions.
 """)
         
 with st.expander("📘 How to Use This App"):
@@ -80,3 +80,9 @@ if st.button("Predict"):
 
     except Exception as e:
         st.error(f"Error: {e}")
+
+st.markdown("---")
+st.markdown(
+    "<center><small>Made with ❤️ by Pavani Karanam | 2025</small></center>",
+    unsafe_allow_html=True
+)
