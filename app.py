@@ -11,7 +11,7 @@ import os
 import json, re
 
 st.set_page_config(
-    page_title="House price Prediction",
+    page_title="Bangalore House price Prediction",
     page_icon="🏡️",
     layout="centered",
     initial_sidebar_state="expanded"
