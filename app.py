@@ -34,9 +34,9 @@ with st.sidebar:
     with st.sidebar:
         st.markdown("### ⚠️ Disclaimer")
         st.markdown(
-            "This app is for educational use only. "
-            "Do not rely on these predictions for financial or legal decisions."
-            "Data in this app is limited to houses in Bangalore."
+            "🔹️This app is for educational use only.\n"
+            "🔹️Do not rely on these predictions for financial or legal decisions.\n"
+            "🔹️Data in this app is limited to houses in Bangalore."
 
         )
     st.subheader("Please fill below house details:")
