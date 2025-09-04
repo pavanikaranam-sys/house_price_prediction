@@ -34,10 +34,9 @@ with st.sidebar:
     with st.sidebar:
         st.markdown("### ⚠️ Disclaimer")
         st.markdown(
+            "🔹️Data in this app is limited to houses in Bangalore.\n"
             "🔹️This app is for educational use only.\n"
-            "🔹️Do not rely on these predictions for financial or legal decisions.\n"
-            "🔹️Data in this app is limited to houses in Bangalore."
-
+            "🔹️Do not rely on these predictions for financial or legal decisions."
         )
     st.subheader("Please fill below house details:")
     location_selected = st.selectbox("Location", list(location_map.keys()))
