@@ -6,4 +6,3 @@ joblib
 matplotlib
 seaborn
 fpdf
-sklearn
