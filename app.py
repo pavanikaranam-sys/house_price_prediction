@@ -43,11 +43,12 @@ if bath>bhk+1:
     st.warning("these type of houses does not exist")
 
 
-st.markdown("### ⚠️ Disclaimer")
+st.markdown("⚠️ **Disclaimer**")
+
 st.markdown("""
-    🔹️Data in this app is limited to houses in Bangalore.
-    🔹️This app is for educational use only.
-    🔹️Do not rely on these predictions for financial or legal decisions.
+🔹️ Data in this app is limited to houses in Bangalore.  
+🔹️ This app is for educational use only.  
+🔹️ Do not rely on these predictions for financial or legal decisions.
 """)
         
 with st.expander("📘 How to Use This App"):
