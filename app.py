@@ -24,7 +24,7 @@ st.write("Welcome to house price prediction app")
 # Use relative paths for deployment
 #df = pd.read_csv("/home/user/Desktop/bhk/model/home_prices.csv")
 
-model = joblib.load("house_price.pkl")
+model = pickle.load(open("house_price.pkl", "rb"))
 
 # Load feature columns
 with open("columns.json", "r") as f:
