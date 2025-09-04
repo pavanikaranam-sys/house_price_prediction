@@ -45,8 +45,8 @@ if bath>bhk+1:
 
 st.markdown("### ⚠️ Disclaimer")
 st.markdown(
-    "🔹️Data in this app is limited to houses in Bangalore.<br>"
-    "🔹️This app is for educational use only.<br>"
+    "🔹️Data in this app is limited to houses in Bangalore."<br>
+    "🔹️This app is for educational use only."<br>
     "🔹️Do not rely on these predictions for financial or legal decisions."
 )
         
