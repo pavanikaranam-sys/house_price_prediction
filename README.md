@@ -34,7 +34,6 @@ price: Price of the house in lakhs (target variable).
 - matplotlib
 - seaborn
 - fpdf
-- # pip install -r requirements.txt
 
 ---
 
@@ -58,6 +57,7 @@ price: Price of the house in lakhs (target variable).
 ## 📝 License
 This project is open-source and free to use.
  
+
 
 
 
