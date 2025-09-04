@@ -27,7 +27,7 @@ with open("house_price.pkl", "rb") as f:
 with open("columns.json", "r") as f:
     data_columns = json.load(f)['data_columns']
 
-location_cols = data_columns[3:]\
+location_cols = data_columns[3:]
 location_map = {loc.replace("location_", ""): loc for loc in location_cols}
 
 with st.sidebar:
