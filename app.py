@@ -68,7 +68,7 @@ if st.button("Predict"):
         x_df = pd.DataFrame([x], columns=data_columns)
 
         prediction = model.predict(x_df)[0]
-        st.success(f"💰 Predicted Price: {round(prediction,2)} Lakhs")
+        st.success(f"💰 Predicted Price: {prediction:.2f} Lakhs")
 
     except Exception as e:
         st.error(f"Error: {e}")
