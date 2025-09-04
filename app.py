@@ -6,7 +6,6 @@ import pickle
 import joblib
 import sklearn
 import numpy as np
-from fpdf import FPDF
 import base64
 import os
 import json, re
@@ -21,19 +20,14 @@ st.set_page_config(
 st.title("🏡️ House Price Prediction")
 st.write("Welcome to house price prediction app")
 
-# Use relative paths for deployment
-#df = pd.read_csv("/home/user/Desktop/bhk/model/home_prices.csv")
 
 with open("house_price.pkl", "rb") as f:
     model = pickle.load(f)
 
-# Load feature columns
 with open("columns.json", "r") as f:
     data_columns = json.load(f)['data_columns']
 
-# Extract location columns (all cols from index 3 onwards are one-hot encoded locations)
-location_cols = data_columns[3:]
-# Map clean names to actual one-hot columns
+location_cols = data_columns[3:]\
 location_map = {loc.replace("location_", ""): loc for loc in location_cols}
 
 with st.sidebar:
@@ -55,11 +49,10 @@ with st.expander("📘 How to Use This App"):
     2. Click **Predict** to check related house details.
     """)
 
-# Prediction button
+
 if st.button("Predict"):
 
     try:
-        # Prepare feature vector
         x = np.zeros(len(data_columns))
         x[0] = total_sqft
         x[1] = bath
@@ -72,10 +65,8 @@ if st.button("Predict"):
             loc_index = data_columns.index(loc_column)
             x[loc_index] = 1
 
-        # Convert numpy array into dataframe with column names
         x_df = pd.DataFrame([x], columns=data_columns)
 
-        # Make prediction
         prediction = model.predict(x_df)[0]
         st.success(f"💰 Predicted Price: {round(prediction,2)} Lakhs")
 
