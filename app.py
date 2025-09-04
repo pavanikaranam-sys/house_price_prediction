@@ -23,7 +23,6 @@ st.write("Welcome to house price prediction app")
 
 with open("house_price_prediction.pkl", "rb") as f:
     model = pickle.load(f)
-st.write("Model type:", type(model))
 
 with open("columns.json", "r") as f:
     data_columns = json.load(f)['data_columns']
