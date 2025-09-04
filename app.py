@@ -20,6 +20,7 @@ st.set_page_config(
 
 st.title("🏡️ House Price Prediction")
 st.write("Welcome to house price prediction app")
+st.write("Model type:", type(model))
 
 # Use relative paths for deployment
 #df = pd.read_csv("/home/user/Desktop/bhk/model/home_prices.csv")
@@ -64,9 +65,10 @@ if st.button("Predict"):
         x[1] = bath
         x[2] = bhk
 
-        loc_clean = location_selected  # selected from dropdown
+        loc_clean = location_selected
+        
         if loc_clean in location_map:
-            loc_column = location_map[loc_clean]          # exact column name
+            loc_column = location_map[loc_clean]          # e
             loc_index = data_columns.index(loc_column)
             x[loc_index] = 1
 
