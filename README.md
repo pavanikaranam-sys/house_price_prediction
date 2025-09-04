@@ -1,4 +1,4 @@
-**🏡️ Bangalore House price Prediction Web App**
+#**🏡️ Bangalore House price Prediction Web App**
 
 ## 🔗 Live Demo  
 👉 [Click here to try the app](https://housepriceprediction-hbkcvteiw6qky4nfkbgwts.streamlit.app/)
@@ -66,3 +66,4 @@ price: Price of the house in lakhs (target variable)
 ## 📝 License
 This project is open-source and free to use.
  
+
