@@ -39,14 +39,14 @@ with st.sidebar:
 
 if total_sqft/bhk<300:
     st.warning("these type of houses does not exist")
-if bath>bhk:
+if bath>bhk+1:
     st.warning("these type of houses does not exist")
 
 
 st.markdown("### ⚠️ Disclaimer")
 st.markdown(
-    "🔹️Data in this app is limited to houses in Bangalore.""\n"
-    "🔹️This app is for educational use only.""\n"
+    "🔹️Data in this app is limited to houses in Bangalore.<br>"
+    "🔹️This app is for educational use only.<br>"
     "🔹️Do not rely on these predictions for financial or legal decisions."
 )
         
