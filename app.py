@@ -31,13 +31,6 @@ location_cols = data_columns[3:]
 location_map = {loc.replace("location_", ""): loc for loc in location_cols}
 
 with st.sidebar:
-    with st.sidebar:
-        st.markdown("### ⚠️ Disclaimer")
-        st.markdown(
-            "🔹️Data in this app is limited to houses in Bangalore.\n"
-            "🔹️This app is for educational use only.\n"
-            "🔹️Do not rely on these predictions for financial or legal decisions."
-        )
     st.subheader("Please fill below house details:")
     location_selected = st.selectbox("Location", list(location_map.keys()))
     total_sqft = st.slider("Total sqft", 300, 5000)
@@ -50,6 +43,13 @@ if bath>bhk:
     st.warning("these type of houses does not exist")
 
 
+st.markdown("### ⚠️ Disclaimer")
+        st.markdown(
+            "🔹️Data in this app is limited to houses in Bangalore.\n"
+            "🔹️This app is for educational use only.\n"
+            "🔹️Do not rely on these predictions for financial or legal decisions."
+        )
+        
 with st.expander("📘 How to Use This App"):
     st.markdown("""
     1. Enter information of house you are searching for.  
