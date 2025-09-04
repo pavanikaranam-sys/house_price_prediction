@@ -32,12 +32,13 @@ location_map = {loc.replace("location_", ""): loc for loc in location_cols}
 
 with st.sidebar:
     with st.sidebar:
-    st.markdown("### ⚠️ Disclaimer")
-    st.markdown(
-        "This app is for educational use only. "
-        "Do not rely on these predictions for financial or legal decisions."
-        "Data in this app is limited to houses in Bangalore."
-    )
+        st.markdown("### ⚠️ Disclaimer")
+        st.markdown(
+            "This app is for educational use only. "
+            "Do not rely on these predictions for financial or legal decisions."
+            "Data in this app is limited to houses in Bangalore."
+
+        )
     st.subheader("Please fill below house details:")
     location_selected = st.selectbox("Location", list(location_map.keys()))
     total_sqft = st.slider("Total sqft", 300, 5000)
