@@ -20,12 +20,12 @@ st.set_page_config(
 
 st.title("🏡️ House Price Prediction")
 st.write("Welcome to house price prediction app")
-st.write("Model type:", type(model))
 
 # Use relative paths for deployment
 #df = pd.read_csv("/home/user/Desktop/bhk/model/home_prices.csv")
 
 model = pickle.load(open("house_price.pkl", "rb"))
+st.write("Model type:", type(model))
 
 # Load feature columns
 with open("columns.json", "r") as f:
