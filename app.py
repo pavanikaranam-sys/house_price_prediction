@@ -21,7 +21,7 @@ st.title("🏡️ House Price Prediction")
 st.write("Welcome to house price prediction app")
 
 
-with open("house_price.pkl", "rb") as f:
+with open("house_price_prediction.pkl", "rb") as f:
     model = pickle.load(f)
 
 with open("columns.json", "r") as f:
